@@ -38,7 +38,7 @@ public class jfContrasena extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Correo Electronico", null, null, null, new java.awt.Color(51, 51, 51)));
+        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Correo Electronico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(51, 51, 51))); // NOI18N
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 380, 40));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
