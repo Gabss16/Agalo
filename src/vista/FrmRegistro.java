@@ -4,21 +4,36 @@
  */
 package vista;
 
+import controlador.ctrlRegistrar;
 import java.awt.Color;
+import modelo.UsuarioEscritorio;
+import static vista.frmRegistro.initFrmRegistro;
 
 /**
  *
  * @author Gudelia
  */
-public class jRegistrarse extends javax.swing.JFrame {
+public class frmRegistro extends javax.swing.JFrame {
 
     /**
      * Creates new form jfLogin
      */
-    public jRegistrarse() {
+    public frmRegistro() {
         initComponents();
+        this.setLocationRelativeTo(this);
     }
 
+    public static void initFrmRegistro(){
+        UsuarioEscritorio modelo = new UsuarioEscritorio();
+        frmRegistro vista = new frmRegistro();
+        ctrlRegistrar controlador = new ctrlRegistrar (modelo,vista);
+        vista.setVisible(true);
+        
+    }
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,11 +49,12 @@ public class jRegistrarse extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btnRegistrar = new custom.Button();
         txtNombre = new custom.TextField();
         txtUsuario = new custom.TextField();
         txtCorreoElectronico = new custom.TextField();
         txtContra = new custom.TextField();
+        btnIrALogin = new custom.Button();
+        btnRegistrar = new custom.Button();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -74,18 +90,6 @@ public class jRegistrarse extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("REGISTRO DE USUARIO");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 370, 50));
-
-        btnRegistrar.setBackground(new java.awt.Color(0, 0, 0));
-        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrar.setText("Crear cuenta ");
-        btnRegistrar.setToolTipText("");
-        btnRegistrar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 190, 60));
 
         txtNombre.setBackground(new java.awt.Color(234, 234, 234));
         txtNombre.setForeground(new java.awt.Color(153, 153, 153));
@@ -159,6 +163,12 @@ public class jRegistrarse extends javax.swing.JFrame {
         });
         jPanel1.add(txtContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 570, 50));
 
+        btnIrALogin.setText("Ir a inicio de sesion");
+        jPanel1.add(btnIrALogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 600, 150, -1));
+
+        btnRegistrar.setText("button1");
+        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 160, 40));
+
         jpBackground.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -175,10 +185,6 @@ public class jRegistrarse extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
@@ -283,14 +289,26 @@ public class jRegistrarse extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(jRegistrarse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(jRegistrarse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(jRegistrarse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(jRegistrarse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -299,12 +317,13 @@ public class jRegistrarse extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new jRegistrarse().setVisible(true);
+             initFrmRegistro();
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public custom.Button btnIrALogin;
     public custom.Button btnRegistrar;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
