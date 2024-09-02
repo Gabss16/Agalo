@@ -125,6 +125,6 @@ public class PanelRedondeado extends JPanel {
         Area area = new Area(new RoundRectangle2D.Double(0, 0, width, height, roundX, roundY));
         area.add(new Area(new Rectangle2D.Double(0, 0, width - roundX / 2, height)));
         area.add(new Area(new Rectangle2D.Double(0, 0, width, height - roundY / 2)));
-        return area;
-    }
+        return area;
+    }        
 }
