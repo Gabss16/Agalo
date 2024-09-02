@@ -34,7 +34,7 @@ public class ctrlRegistrar implements MouseListener {
        
             System.out.println("Botón registrar clicado");
             modelo.setNombre(vista.txtNombre.getText());
-            modelo.setUsuario(vista.txtUsuario.getText());
+            modelo.setUsuario(vista.txtNombre.getText());
             modelo.setCorreo(vista.txtCorreoElectronico.getText());
             modelo.setContrasena(vista.txtContra.getText());
             
