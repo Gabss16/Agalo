@@ -52,13 +52,13 @@ public class frmRegistro extends javax.swing.JFrame {
         txtNombre = new custom.TextField();
         txtCorreoElectronico = new custom.TextField();
         txtContra = new custom.TextField();
-        btnIrALogin = new custom.Button();
         btnRegistrar = new custom.Button();
         jLabel2 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        jCondiciones = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        txtUsuario1 = new custom.TextField();
+        txtUsuario = new custom.TextField();
+        btnLogear = new custom.Button();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -149,11 +149,6 @@ public class frmRegistro extends javax.swing.JFrame {
         });
         jPanel1.add(txtContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 570, 50));
 
-        btnIrALogin.setBackground(new java.awt.Color(0, 0, 0));
-        btnIrALogin.setForeground(new java.awt.Color(255, 255, 255));
-        btnIrALogin.setText("Iniciar Sesión");
-        jPanel1.add(btnIrALogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, 140, 30));
-
         btnRegistrar.setBackground(new java.awt.Color(0, 0, 0));
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrar.setText("REGISTRAR");
@@ -169,38 +164,41 @@ public class frmRegistro extends javax.swing.JFrame {
         jLabel2.setText("¿Ya tienes cuenta? ");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, 150, 20));
 
-        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setFont(new java.awt.Font("Calibri Light", 0, 11)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(153, 153, 153));
-        jCheckBox1.setText("Acepto las Condiciones del servicio y la Política de privacidad de Agalo");
-        jCheckBox1.setToolTipText("");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        jCondiciones.setBackground(new java.awt.Color(255, 255, 255));
+        jCondiciones.setFont(new java.awt.Font("Calibri Light", 0, 11)); // NOI18N
+        jCondiciones.setForeground(new java.awt.Color(153, 153, 153));
+        jCondiciones.setText("Acepto las Condiciones del servicio y la Política de privacidad de Agalo");
+        jCondiciones.setToolTipText("");
+        jCondiciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                jCondicionesActionPerformed(evt);
             }
         });
-        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 390, 30));
+        jPanel1.add(jCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 390, 30));
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 410, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img/delgadita.jpg (1).png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, -1, 60));
 
-        txtUsuario1.setForeground(new java.awt.Color(153, 153, 153));
-        txtUsuario1.setText("Usuario");
-        txtUsuario1.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtUsuario.setForeground(new java.awt.Color(153, 153, 153));
+        txtUsuario.setText("Usuario");
+        txtUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txtUsuario1FocusGained(evt);
+                txtUsuarioFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtUsuario1FocusLost(evt);
+                txtUsuarioFocusLost(evt);
             }
         });
-        txtUsuario1.addActionListener(new java.awt.event.ActionListener() {
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuario1ActionPerformed(evt);
+                txtUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(txtUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 570, 50));
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 570, 50));
+
+        btnLogear.setText("button1");
+        jPanel1.add(btnLogear, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 500, 130, -1));
 
         jpBackground.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
 
@@ -230,7 +228,7 @@ public class frmRegistro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCorreoElectronicoActionPerformed
 
     private void txtNombreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreFocusGained
-    if (txtNombre.getText().equals("Usuario")) {
+    if (txtNombre.getText().equals("Nombre")) {
          txtNombre.setText("");
          txtNombre.setForeground(new Color(153,153,153));
      }
@@ -240,7 +238,7 @@ public class frmRegistro extends javax.swing.JFrame {
 
     private void txtNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreFocusLost
         if (txtNombre.getText().equals("")) {
-         txtNombre.setText("Usuario");
+         txtNombre.setText("Nombre");
          txtNombre.setForeground(new Color(153,153,153));
      }
            
@@ -285,25 +283,33 @@ public class frmRegistro extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtContraFocusGained
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void jCondicionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCondicionesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_jCondicionesActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
-    private void txtUsuario1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsuario1FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario1FocusGained
+    private void txtUsuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsuarioFocusGained
+     if (txtUsuario.getText().equals("Usuario")) {
+         txtUsuario.setText("");
+         txtUsuario.setForeground(new Color(153,153,153));
+     }
+    }//GEN-LAST:event_txtUsuarioFocusGained
 
-    private void txtUsuario1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsuario1FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario1FocusLost
+    private void txtUsuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsuarioFocusLost
+    if (txtUsuario.getText().equals("")) {
+         txtUsuario.setText("Usuario");
+         txtUsuario.setForeground(new Color(153,153,153));
+     }
+        
+        
+    }//GEN-LAST:event_txtUsuarioFocusLost
 
-    private void txtUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuario1ActionPerformed
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuario1ActionPerformed
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -404,10 +410,10 @@ public class frmRegistro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public custom.Button btnIrALogin;
+    public custom.Button btnLogear;
     public custom.Button btnRegistrar;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox<String> jComboBox1;
+    public javax.swing.JCheckBox jCondiciones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -419,6 +425,6 @@ public class frmRegistro extends javax.swing.JFrame {
     public custom.TextField txtContra;
     public custom.TextField txtCorreoElectronico;
     public custom.TextField txtNombre;
-    public custom.TextField txtUsuario1;
+    public custom.TextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
